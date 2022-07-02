@@ -1,0 +1,14 @@
+.asd {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(238, 255, 0);
+  margin-left: 20px;
+  border-radius: 30px;
+}
+
+.ads{
+    font-size: 12px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(161, 168, 197);
+}

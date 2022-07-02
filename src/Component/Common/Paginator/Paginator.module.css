@@ -1,0 +1,21 @@
+.paginator {
+  margin: 10px;
+}
+button{
+  cursor: pointer;
+}
+.selectedPage {
+  cursor: pointer;
+  user-select: none;
+}
+
+.pageNumber {
+  margin: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pageNumber:hover {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
