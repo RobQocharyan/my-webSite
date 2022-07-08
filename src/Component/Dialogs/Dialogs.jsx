@@ -12,7 +12,7 @@
   const Dialogs = (props) => {
     let state = props.dialogPage;
     let dialogElements = state.dialogsData.map((dialog) => {
-      return <DialogsItem name={dialog.name} key={dialog.id} id={dialog.id} />;
+      return <DialogsItem name={dialog.name} id={dialog.id} />;
     });
 
     let messagesElement = state.messagesData.map((messag) => {
@@ -21,7 +21,8 @@
 
 
     let addNewMessage = (values) => {
-      props.onDialogicFunction(values.newMessages);
+      props.sendMessage(values.newMessages);
+      values.newMessages="";
     };
     if (props.isAuth) {
       return <Navigate to="/login" />;

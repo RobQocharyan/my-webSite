@@ -9,7 +9,7 @@ import {
   useLocation,
   useNavigate,
   useParams,
-  BrowserRouter,
+  HashRouter
 } from "react-router-dom";
 
 import HeaderContainer from "./Component/Header/HeaderContainer";
@@ -25,6 +25,8 @@ import { Provider } from "react-redux";
 // import Settings from "./Component/Settings/Settings";
 // import Friends from "./Component/Friends/Friends";
 // import Login from "./Component/login/Login";
+// import DialogsContainer from "./Component/Dialogs/DialogsConteiner";
+// import ProfileContainer from "./Component/Profile/ProfileContainer";
 const Login = React.lazy(() => import("./Component/login/Login"));
 
 const News = React.lazy(() => import("./Component/News/News"));
@@ -43,8 +45,7 @@ const ProfileContainer = React.lazy(() =>
 const UsersConteiner = React.lazy(() =>
   import("./Component/Users/UsersConteiner")
 );
-// import DialogsContainer from "./Component/Dialogs/DialogsConteiner";
-// import ProfileContainer from "./Component/Profile/ProfileContainer";
+
 
 function withRouter(Component) {
   function ComponentWithRouterProp(props) {
@@ -80,7 +81,7 @@ class App extends Component {
               }
             />
             <Route
-              path="/Dialogs/*"
+              path="/Dialogs/"
               element={
                 <Suspense fallback={<div>Загрузка...</div>}>
                   <DialogsContainer />
@@ -151,14 +152,16 @@ let AppContainer = compose(
   connect(mapStateToProps, { initializeApp })
 )(App);
 
-const SamuraiJsApp = (props) => {
+
+ 
+const SamuraiJsApp = () => {
   return (
     <React.StrictMode>
-      <BrowserRouter>
+      <HashRouter>
         <Provider store={store}>
           <AppContainer />
         </Provider>
-      </BrowserRouter>
+      </HashRouter>
     </React.StrictMode>
   );
 };

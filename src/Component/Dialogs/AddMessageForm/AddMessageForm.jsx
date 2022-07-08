@@ -1,28 +1,28 @@
-// import { Form, Field } from 'react-final-form'
-// import { MaxLengthCreator, required } from "../../../utils/validators/validators";
-// import { Textarea } from "../../Common/FormsControls/FormControls";
+import { reduxForm,Field } from 'redux-form';
+import { MaxLengthCreator, required } from "../../../utils/validators/validators";
+import { Textarea } from "../../Common/FormsControls/FormControls";
 
-// const maxLength50 = MaxLengthCreator(50)
+const maxLength50 = MaxLengthCreator(50)
 
 
-// const AddMessageForm = (props) => {
-//     return (
-//       <form onSubmit={props.handleSubmit}>
-//         <div>
-//           <Field
-//             component={Textarea}
-//             validate={[required,maxLength50]}
-//             name="newMessages"
-//             placeholder="Write your message!!"
-//           />
-//         </div>
-//         <div>
-//           <button>Add post</button>
-//         </div>
-//       </form>
-//     );
-//   };
+const AddMessageForm = (props) => {
+    return (
+      <form onSubmit={props.handleSubmit}>
+        <div>
+          <Field
+            component={Textarea}
+            validate={[required,maxLength50]}
+            name="newMessages"
+            placeholder="Write your message!!"
+            />
+        </div>
+        <div>
+          <button>Add post</button>
+        </div>
+      </form>
+    );
+  };
   
-//   export default Form({ form: "dialog-add-message-form" })(
-//     AddMessageForm
-//   );
+  export default reduxForm({ form: "dialog-add-message-form" })(
+    AddMessageForm
+  );

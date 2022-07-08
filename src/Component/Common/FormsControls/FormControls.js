@@ -1,11 +1,11 @@
-import { Field } from "formik";
 import React from "react";
+import { Field } from "redux-form";
 import classes from "./FormControls.module.css";
 
-const FormControl = ({ input, meta:{touched,error},children}) => {
+const FormControl = ({ input, meta: { touched, error }, children }) => {
   const hasError = touched && error;
   return (
-    <div className={classes.formControl + "" + (hasError ? classes.error : "")}>
+    <div className={classes.formControl + " " + (hasError ? classes.error : "")}>
       <div>{children}</div>
       {hasError && <span>{error}</span>}
     </div>
@@ -18,13 +18,12 @@ export const Textarea = (props) => {
   return (
     <FormControl {...props}>
       <textarea {...input} {...restProps} />
-    </FormControl>
+    </FormControl >
   );
 };
 
 export const Input = (props) => {
   const { input, meta, child, element, ...restProps } = props;
-
   return (
     <FormControl {...props}>
       <input {...input} {...restProps} />
@@ -32,16 +31,24 @@ export const Input = (props) => {
   );
 };
 
-export const CreateField = (placeholder, name, component, validate, props={},text="") => {
+export const CreateField = (
+  placeholder,
+  name,
+  validate,
+  component,
+  props = {},
+  text = ""
+) => {
   return (
     <div>
       <Field
         placeholder={placeholder}
         name={name}
+        validate={validate}
         component={component}
-        validate={[validate]}
         {...props}
-      />{text}
+      />
+      {text}
     </div>
   );
 };

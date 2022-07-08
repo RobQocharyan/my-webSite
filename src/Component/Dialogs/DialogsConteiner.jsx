@@ -12,7 +12,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    onDialogicFunction: (newMessages) => {
+    sendMessage: (newMessages) => {
       dispatch(dialogicActionCretor(newMessages));
     },
   };

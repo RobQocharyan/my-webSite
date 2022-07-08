@@ -1,7 +1,7 @@
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import React from "react";
-import { Form, Field } from "react-final-form";
+import { Field, reduxForm} from "redux-form";
 import {
   MaxLengthCreator,
   required,
@@ -12,21 +12,24 @@ const maxLength10 = MaxLengthCreator(10);
 
 const MyPosts = React.memo((props) => {
   let postElements = [...props.post].reverse().map((post) => {
-    return <Post message={post.message} key={post.count} count={post.count} />;
+    return <Post key={post.id} message={post.message} count={post.count} />;
   });
 
-  let onAddPost = (values) => {
-    props.addPostActionCreator(values.newDialog);
+  let onAddPostForm = (values) => {
+    props.onAddPost(values.newDialog);
+    values.newDialog="";
   };
 
   return (
     <div className={classes.myPost}>
       <h2>my post</h2>
-      <MyPostsReduxForm onSubmit={onAddPost} />
+      <MyPostsReduxForm onSubmit={onAddPostForm} />
       <div className={classes.posts}>{postElements}</div>
     </div>
   );
 });
+
+
 const MyPostsRedux = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
@@ -45,5 +48,5 @@ const MyPostsRedux = (props) => {
   );
 };
 
-const MyPostsReduxForm = Form({ form: "dialogAddPost" })(MyPostsRedux);
+const MyPostsReduxForm = reduxForm({ form: "dialogAddPost" })(MyPostsRedux);
 export default MyPosts;

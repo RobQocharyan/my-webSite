@@ -8,7 +8,7 @@ export const required = (value) => {
 
 export const MaxLengthCreator = (maxLength)=> (value) => {
     if(value.length>maxLength){
-        return `Max Length is ${maxLength} symvols`;
+        return `Max Length is ${maxLength} symwols`;
 
     }
     return undefined;

@@ -8,6 +8,7 @@ const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
 const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
 const TOGGLE_IS_FOLLOWING_IN_PROGRESS = "TOGGLE-IS-FOLLOWING-IN-PROGRESS";
+
 let initialState = {
   users: [],
   pageSize: 10,
@@ -76,10 +77,11 @@ export const TogleIsFollowingInProgress = (isFetching, userId) => ({
   userId,
 });
 
-export const getUsersThunnk = (page, pageSize) => {
+export const requestUsers = (page, pageSize) => {
   return async (dispatch) => {
     dispatch(setTogleIsFetching(true));
     dispatch(setCurrentPage(page));
+    
     let data = await usersAPI.getUsers(page, pageSize);
     dispatch(setTogleIsFetching(false));
     dispatch(setUsers(data.items));

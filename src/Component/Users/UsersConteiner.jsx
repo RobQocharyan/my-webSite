@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import {
   follow,
   getUsersThunnk,
+  requestUsers,
   setCurrentPage,
   unfollow,
 } from "../../Redux/users-reducer";
@@ -22,12 +23,12 @@ class UsersContainer extends React.Component {
   componentDidMount() {
     const { currentPage, pageSize } = this.props;
 
-    this.props.getUsersThunnk(currentPage, pageSize);
+    this.props.getUsers(currentPage, pageSize);
   }
 
   onPageChanged = (pageNumber) => {
     const {pageSize}  = this.props
-    this.props.getUsersThunnk(pageNumber,pageSize);
+    this.props.getUsers(pageNumber,pageSize);
   };
 
   render() {
@@ -59,12 +60,11 @@ let mapStateToProps = (state) => {
     followingInProgress: getFollowingInProgess(state),
   };
 };
-
 export default compose(
   connect(mapStateToProps, {
     follow,
     unfollow,
     setCurrentPage,
-    getUsersThunnk,
+    getUsers:requestUsers,
   })
 )(UsersContainer);

@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/RobQocharyan/web-site",
+  "homepage": "https://robqocharyan.github.io/Web-site-from/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -11,6 +11,7 @@
     "@types/redux": "^3.6.0",
     "add": "^2.0.6",
     "axios": "^0.27.2",
+    "classnames": "^2.3.1",
     "final-form": "^4.20.7",
     "formik": "^2.2.9",
     "patch-package": "^6.4.7",
@@ -23,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-test-renderer": "^18.1.0",
     "redux": "^4.2.0",
+    "redux-form": "^8.3.8",
     "redux-thunk": "^2.4.1",
     "reselect": "^4.1.6",
     "web-vitals": "^2.1.4"
@@ -32,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

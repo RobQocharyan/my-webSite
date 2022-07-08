@@ -4,5 +4,18 @@
 }
 
 .status{
-    color:cyan;
+    color:rgb(255, 8, 0);
+}
+
+
+.mainFoto{
+    max-width: 200px;
+}
+
+.contact{
+    padding-left: 15px;
+}
+
+.contact{
+    
 }

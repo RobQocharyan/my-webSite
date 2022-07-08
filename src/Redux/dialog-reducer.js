@@ -18,7 +18,7 @@ let initialState = {
 const dialogReducer = (state = initialState, action) => {
   switch (action.type) {
     case DIALOGIC:
-      const newMessag = action.newMessag;
+      const newMessag = action.newMessages;
       return {
         ...state,
         messagesData: [...state.messagesData, { id: 8, messages: newMessag }],
@@ -29,6 +29,6 @@ const dialogReducer = (state = initialState, action) => {
   }
 };
 
-export const dialogicActionCretor = (newMessages) => ({ type: DIALOGIC, dial: newMessages });
+export const dialogicActionCretor = (newMessages) => ({ type: DIALOGIC, newMessages });
 
 export default dialogReducer;

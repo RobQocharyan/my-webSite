@@ -4,7 +4,7 @@
 .formControl.error input,
 .formControl.error textarea
 {
-    border: 1px solid red;
+    border: 2px solid red;
 }
 
 
