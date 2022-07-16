@@ -29,10 +29,10 @@ const ProfileInfo = ({
   };
 
   const onSubmit = (formData) => {
-    alert("hello")
-    // let promise = saveProfile(formData)
-    // debugger
-    //   setEditMode(false);
+
+    saveProfile(formData).then(()=>{
+      setEditMode(false)
+    })
     };
 
   return (

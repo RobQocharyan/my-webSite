@@ -6,6 +6,7 @@ import { CreateField, Input, Textarea } from "../../Common/FormsControls/FormCon
 const ProfileDataForm = ({ handleSubmit, profile, error }) => {
   return (
     <form onSubmit={handleSubmit}>
+
       <div>
         <button>save</button>
       </div>
@@ -22,8 +23,8 @@ const ProfileDataForm = ({ handleSubmit, profile, error }) => {
         {CreateField(
           "My professional skills",
           "lookingForAJobDescription",
+          [],
           Textarea, 
-          []
         )}
       </div>
       <div>
@@ -43,10 +44,6 @@ const ProfileDataForm = ({ handleSubmit, profile, error }) => {
       </div>
     </form>
 
-  //   <form>
-  //     <div><button>Save</button></div>
-  //     <div><b>Full Name</b>:{CreateField("Full name", "fullName",  [])}</div>
-  //   </form>
   );
 };
 const ProfileDataFormReduxForm = reduxForm({ form: "edit-profile" })(

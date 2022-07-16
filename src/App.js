@@ -9,7 +9,8 @@ import {
   useLocation,
   useNavigate,
   useParams,
-  HashRouter
+  // BrowserRouter,
+  HashRouter,
 } from "react-router-dom";
 
 import HeaderContainer from "./Component/Header/HeaderContainer";
@@ -46,7 +47,6 @@ const UsersConteiner = React.lazy(() =>
   import("./Component/Users/UsersConteiner")
 );
 
-
 function withRouter(Component) {
   function ComponentWithRouterProp(props) {
     let location = useLocation();
@@ -59,7 +59,7 @@ function withRouter(Component) {
 }
 class App extends Component {
   componentDidMount() {
-    this.props.initializeApp();
+    this.props.initializeApp(); 
   }
   render() {
     if (!this.props.initialized) {
@@ -79,7 +79,9 @@ class App extends Component {
                   <ProfileContainer />
                 </Suspense>
               }
-            />
+            >
+              <Route path=":userId" element={<ProfileContainer />} />
+            </Route>
             <Route
               path="/Dialogs/"
               element={
@@ -87,7 +89,9 @@ class App extends Component {
                   <DialogsContainer />
                 </Suspense>
               }
-            />
+            >
+              <Route path=":userId" element={<DialogsContainer />} />
+            </Route>
             <Route
               path="/users"
               element={
@@ -137,6 +141,15 @@ class App extends Component {
                 </Suspense>
               }
             />
+
+            <Route
+              path="*"
+              element={
+                <Suspense fallback={<div>Загрузка...</div>}>
+                  <Music />
+                </Suspense>
+              }
+            />
           </Routes>
         </div>
       </div>
@@ -152,8 +165,6 @@ let AppContainer = compose(
   connect(mapStateToProps, { initializeApp })
 )(App);
 
-
- 
 const SamuraiJsApp = () => {
   return (
     <React.StrictMode>

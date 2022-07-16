@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import {reduxForm } from "redux-form";
 
 import { connect } from "react-redux";
 import { Navigate } from "react-router";
@@ -8,9 +8,7 @@ import { required } from "../../utils/validators/validators";
 import { CreateField, Input } from "../Common/FormsControls/FormControls";
 import classes from "./../Common/FormsControls/FormControls.module.css";
 
-const LoginForm = ({ handleSubmit, error }) => {
-  console.log("rerender");
-
+const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
   return (
     <form onSubmit={handleSubmit}>
       {CreateField("Email", "email", [required], Input)}
@@ -26,9 +24,14 @@ const LoginForm = ({ handleSubmit, error }) => {
         { type: "Checkbox" },
         "remember me"
       )}
+
+      {captchaUrl && <img src={captchaUrl} alt="" />}
+      {captchaUrl &&
+        CreateField("Symbols from images", "captcha", [required], Input)}
+
       {error && <div className={classes.formSummaryError}>{error}</div>}
 
-        <button>Login</button>
+      <button>Login</button>
     </form>
   );
 };
@@ -39,8 +42,12 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-    console.log(formData);
-    props.login(formData.email, formData.password, formData.rememberMe);
+    props.login(
+      formData.email,
+      formData.password,
+      formData.rememberMe,
+      formData.captcha
+    );
   };
 
   if (props.isAuth) {
@@ -50,13 +57,14 @@ const Login = (props) => {
   return (
     <div>
       <h1>Login</h1>
-      <LoginReduxForm onSubmit={onSubmit} />
+      <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth,
   };
 };

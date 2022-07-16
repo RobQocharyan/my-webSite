@@ -4,7 +4,6 @@ import userPhoto from "../../assets/img/user.jpg";
 import classes from "./Users.module.css";
 
 let User = ({ user,followingInProgress,unfollow,follow }) => {
-debugger
   return (
     <div>
       <span>

@@ -25,7 +25,7 @@
       values.newMessages="";
     };
     if (props.isAuth) {
-      return <Navigate to="/login" />;
+      return <Navigate to="/dialog" />;
     }
     return (
       <div className={classes.dialogs}>
