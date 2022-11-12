@@ -1,18 +1,145 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
 .nav{
   grid-area: n;
-  background-color:cyan;
-  padding: 20px;
+  background-color:
+  #042331;
+ }
+
+nav a{
+  display: block;
+  height: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-left: 40px;
+  transition: .4s;
 }
 
 .item{
-  color: aliceblue;
+  font-family: sans-serif;
+  font-weight: 500;
   text-decoration: none;
-
 }
 
 
- a .active{
-  color: green;
+ .active{
+  color: rgba(5, 129, 135, 1);
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 500;
   text-decoration: none;
+
+
+}
+
+ul li:hover a{
+  padding-left: 50px;
+
+}
+
+label{
+  display: none;
+}
+
+label input{
+      display: none;
+      visibility: hidden;
+      -webkit-appearance: none;
+  }
+.burger{
+  position: absolute;
+  height: 2.87rem;
+  width: 0.87rem;
+  border-radius: 2px;
+  cursor: pointer;
+  top: 4.25rem;
+  left: 0.93rem;
+  z-index: 2;
+  
+}
+
+
+
+.burger span{
+    position: absolute;
+    height: 2px;
+    width: 1.25rem;
+    background-color: black;
+    border-radius: 3.125rem;
+    transition: .3s ease;
+}
+
+.burger .burgerOne{
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.burger .burgerTwo{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.burger .burgerThree{
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+input:checked ~ .burger .burgerOne{
+  left: 2px;
+  top: .87rem;
+  width:1.56rem;
+  transform: rotate(45deg);
+}
+
+input:checked ~ .burger .burgerTwo{
+  opacity: 0;
+  transform: translateX(20px);
+}
+input:checked ~ .burger .burgerThree{
+  left: 0.125rem;
+  top: .87rem;
+  width: 1.56rem;
+  transform: rotate(-45deg);
+}
+
+input:checked ~ .burgerContent{
+  transform: translateX(0);
+}
+
+.burgerContent{
+  position: absolute;
+  height:50.56rem;
+  transform: translateX(-320px);
+  margin-top: 15px;
+  background-color:rgba(255, 255, 255, 1);
+}
+
+
+
+
+@media only screen and (max-width: 414px) {
+  .menu{
+    display:none
+}
+.nav{
+  margin-top: 15px;
+}
+  label{
+    display: block;
+  }
+  
 
 }

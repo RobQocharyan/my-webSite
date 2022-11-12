@@ -4,3 +4,32 @@
   border-radius: 50px;
 }
 
+
+.follow{
+  width: 100px;
+  padding: 5px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: white;
+  background-color: blue;
+  transition: .5s;
+}
+
+.follow:hover{
+  background-color: rgb(47, 47, 151);
+}
+
+.name{
+  font-weight: 900;
+}
+
+.country{
+  font-weight: 600;
+}
+
+
+.city{
+  font-weight: 400;
+}

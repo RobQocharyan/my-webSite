@@ -1,12 +1,18 @@
 .paginator {
   margin: 10px;
 }
+
+.paginator span:hover{
+  color: red;
+  text-decoration: underline;
+}
 button{
   cursor: pointer;
 }
 .selectedPage {
-  cursor: pointer;
-  user-select: none;
+  color: rgb(100, 33, 33);
+  text-decoration: underline;
+  font-weight: 900;
 }
 
 .pageNumber {
@@ -18,4 +24,19 @@ button{
 .pageNumber:hover {
   font-weight: bold;
   color: rgb(0, 0, 0);
+}
+
+
+.active{
+  color: red;
+  text-decoration: underline;
+}
+
+.next{
+  width: 50px;
+  border-radius: 7px;
+  border: none;
+  padding: 5px;
+  background-color: blue;
+  color: white;
 }

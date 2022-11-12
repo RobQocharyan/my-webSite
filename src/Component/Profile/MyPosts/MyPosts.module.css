@@ -5,3 +5,8 @@
 .posts{
     margin-top:20px;
 }
+
+
+textarea{
+    margin-left: 0!important;
+}

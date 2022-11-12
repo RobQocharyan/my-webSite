@@ -1,0 +1,35 @@
+
+
+.button{
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: blue;
+    cursor: pointer;
+    transition: .5s;
+    color: white;
+}
+
+.button:hover{
+    background-color: rgb(50, 50, 173);
+}
+
+select{
+    height: 28px;
+    color: red;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.search{
+    height: 25px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;  
+}
