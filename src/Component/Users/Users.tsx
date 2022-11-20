@@ -19,7 +19,7 @@ export const Users: React.FC<PropsType> = (props) => {
 
   useEffect(()=>{
     dispatch(requestUsers(currentPage,pageSize,filter));
-  })
+  },[])
 
 
   const totalItemCount = useSelector(getTotalUsersCount)
