@@ -11,8 +11,8 @@
   grid-area: n;
   background-color:
   #042331;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
  }
 
 nav a{
@@ -125,13 +125,14 @@ input:checked ~ .burgerContent{
   position: absolute;
   height:50.56rem;
   transform: translateX(-320px);
-  background-color:rgba(255, 255, 255, 1);
 }
 
 .menu{
       width: 200px;
 }
 
+.content{
+}
 
 @media only screen and (max-width: 420px) {
   .menu{

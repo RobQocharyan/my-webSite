@@ -4,12 +4,13 @@ import React from "react";
 const NavBar:React.FC = () => {
   return (
     <>
-     <label>
+    <div className={classes.content}>
+    <label>
             <input type="checkbox" />
-            <div className={classes.burger}>
-              <span className={classes.burgerOne}></span>
-              <span className={classes.burgerTwo}></span>
-              <span className={classes.burgerThree}></span>
+              <div className={classes.burger}>
+                <span className={classes.burgerOne}></span>
+                <span className={classes.burgerTwo}></span>
+                <span className={classes.burgerThree}></span>
             </div>
             <div className={classes.burgerContent}>
               <nav className={classes.nav}>
@@ -162,6 +163,8 @@ const NavBar:React.FC = () => {
         </ul>
       </nav>
     </div>
+    </div>
+   
 
     
 
