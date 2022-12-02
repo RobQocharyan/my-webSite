@@ -19,7 +19,7 @@ const Header:React.FC<MapPropsType & DispatchPropsType> = (props) => {
 
       <div className={classes.loginBlock}>
         {props.isAuth ? (
-          <div>  <span>  {props.login} - </span>  <button onClick={props.logout}>Log out</button></div>
+          <div className={classes.yoo}>  <span>  {props.login} - </span>  <button onClick={props.logout}>Log out</button></div>
         ) : (
           <NavLink to={"/login"}>Login</NavLink>
         )}

@@ -11,6 +11,8 @@
   grid-area: n;
   background-color:
   #042331;
+  position: sticky;
+  top: 0;
  }
 
 nav a{
@@ -61,7 +63,7 @@ label input{
   width: 0.87rem;
   border-radius: 2px;
   cursor: pointer;
-  top: 4.25rem;
+  top: 4.15rem;
   left: 0.93rem;
   z-index: 2;
   
@@ -123,14 +125,15 @@ input:checked ~ .burgerContent{
   position: absolute;
   height:50.56rem;
   transform: translateX(-320px);
-  margin-top: 15px;
   background-color:rgba(255, 255, 255, 1);
 }
 
+.menu{
+      width: 200px;
+}
 
 
-
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 420px) {
   .menu{
     display:none
 }

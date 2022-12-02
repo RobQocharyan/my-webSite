@@ -1,18 +1,19 @@
 .app-wrapper{
   width: 100%;
-  display: grid;
-  grid-template-areas: "h h h" "n c c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  display: block;
   /* grid-gap: 10px; */
 }
 
 
 .app-wrapper-content{
-    grid-area: c;
     background-color: rgb(156, 245, 156);
+    width: 100%;
 }
 
+.navAndContent{
+  display: flex;
+
+}
 
 
 

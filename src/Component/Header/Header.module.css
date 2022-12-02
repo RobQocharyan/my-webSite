@@ -1,7 +1,10 @@
 .header{
-  grid-area: h;
+  width: 100%;
+  height: 70px;
   background-color: rgb(224, 238, 224);
-  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header  img{
@@ -50,8 +53,29 @@
 }
 
 
-@media only screen and (max-width: 414) {
+@media only screen and (max-width: 434px) {
   body {
     background-color: lightblue;
   }
+  .loginBlock {
+    margin-left: 50px;
+  }
+  .yoo{
+    align-items: center;
+
+  }
+  .loginBlock span{
+    font-size: 14px;
+  }
+  .loginBlock  button{
+    width: 40%;
+  }
+} 
+
+@media only screen and (max-width: 434px) {
+ .yoo button{
+  width: 70px;
+  font-size: 10px;
+ }
+ 
 } 

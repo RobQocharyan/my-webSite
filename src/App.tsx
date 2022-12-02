@@ -75,6 +75,7 @@ class App extends Component<MapPropsType & DispatchPropsType> {
     return (
       <div className="app-wrapper">
         <HeaderContainer />
+        <div className='navAndContent'>
         <NavBar />
         <div className="app-wrapper-content">
           <Routes>
@@ -149,6 +150,8 @@ class App extends Component<MapPropsType & DispatchPropsType> {
             />
           </Routes>
         </div>
+        </div>
+        
       </div>
     );
   }
